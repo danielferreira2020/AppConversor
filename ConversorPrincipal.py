@@ -11,7 +11,7 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as file:
         return base64.b64encode(file.read()).decode()
 
-logo_path = "C:/Users/DAniel/Documents/Projetos/Desenvolvimento/Convercao/.streamlit/static/logo.png"
+logo_path = ".streamlit/static/logo.png"
 
 if os.path.exists(logo_path):
     logo_base64 = get_base64_image(logo_path)
