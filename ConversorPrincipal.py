@@ -15,7 +15,7 @@ if os.path.exists(logo_path):
     logo_base64 = get_base64_image(logo_path)
     st.sidebar.markdown(
         f"""
-        <div style="text-align: center;">
+        <div style="text-align: left; margin-top: -40px;">
             <img src="data:image/png;base64,{logo_base64}" style="width:255px;">
         </div>
         """,
@@ -23,6 +23,7 @@ if os.path.exists(logo_path):
     )
 else:
     st.sidebar.error("Logo não encontrada. Verifique o caminho do arquivo.")
+
 
 # Conteúdo da aplicação
 #st.title("Bem-vindo à Aplicação")
