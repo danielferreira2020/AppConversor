@@ -172,7 +172,7 @@ class Classe4(ClasseBase):
         """
         Gera o conteúdo do arquivo TXT no layout esperado:
         - Unidade: 2 caracteres
-        - Código de Verba: 3 caracteres
+        - Código de Verba: 4 caracteres
         - Matrícula: 12 caracteres
         - Parcelas Atual: 2 caracteres
         - Total de Parcelas: 2 caracteres
@@ -495,8 +495,8 @@ class ClassePrincipal:
             )
             codigo_verba = st.text_input(
                 'Código da Verba',
-                placeholder='Ex.: 001',
-                max_chars=3
+                placeholder='Ex.: 1234',
+                max_chars=4
             )
             matricula = st.text_input(
                 'Matrícula do Servidor',
@@ -536,7 +536,7 @@ class ClassePrincipal:
             if submit_button:
                 # Aplicar formatação com zeros à esquerda
                 unidade_formatada = unidade.zfill(2)
-                codigo_verba_formatado = codigo_verba.zfill(3)
+                codigo_verba_formatado = codigo_verba.zfill(4)
                 matricula_formatada = matricula.zfill(12)
                 valor_parcela_formatado = conversor.formatar_valor_parcela(valor_parcela)
                 cpf_formatado = cpf.zfill(11)
@@ -591,7 +591,7 @@ class ClassePrincipal:
                         if salvar_edicao:
                             st.session_state['dados'][indice_selecionado] = {
                                 'unidade': unidade_edit.zfill(2),
-                                'codigo_verba': codigo_verba_edit.zfill(3),
+                                'codigo_verba': codigo_verba_edit.zfill(4),
                                 'matricula': matricula_edit,
                                 'parcelas_atual': '01',
                                 'total_parcelas': '01',
